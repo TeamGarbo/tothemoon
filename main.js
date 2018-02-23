@@ -22,31 +22,22 @@ button.interactive = true;
 button.buttonMode = true;
 
 button
-// Mouse & touch events are normalized into
-// the pointer* events for handling different
-// button events.
 .on('pointerdown', onButtonDown)
 .on('pointerup', onButtonUp)
 .on('pointerupoutside', onButtonUp)
 .on('pointerover', onButtonOver)
 .on('pointerout', onButtonOut);
 
-// Use mouse-only events
-// .on('mousedown', onButtonDown)
-// .on('mouseup', onButtonUp)
-// .on('mouseupoutside', onButtonUp)
-// .on('mouseover', onButtonOver)
-// .on('mouseout', onButtonOut)
-
-// Use touch-only events
-// .on('touchstart', onButtonDown)
-// .on('touchend', onButtonUp)
-// .on('touchendoutside', onButtonUp)
-
 // add it to the stage
 app.stage.addChild(button);
 
 var incr = 0;
+
+function onButtonDown() {
+	this.isdown = true;
+	this.texture = textureButtonDown;
+	this.alpha = 1;
+}
 
 function onButtonUp() {
 
