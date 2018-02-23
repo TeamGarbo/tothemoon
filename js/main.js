@@ -1,14 +1,15 @@
-var app = new PIXI.Application(window.innerWidth - 20, window.innerHeight - 20, {
+var app = new PIXI.Application(window.innerWidth - 20, window.innerHeight - 20, {backgroundColor : 0x1099bb}, {
 		antialias: true
 	});
 document.body.appendChild(app.view);
 
 app.stage.interactive = true;
 
+
 // create some textures from an image path
-var textureButton = PIXI.Texture.fromImage('res\buttonup.png');
-var textureButtonDown = PIXI.Texture.fromImage('res\buttondown.png');
-var textureButtonOver = PIXI.Texture.fromImage('res\buttonup.png');
+var textureButton = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttonup.png');
+var textureButtonDown = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttondown.png');
+var textureButtonOver = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttonup.png');
 
 var button = new PIXI.Sprite(textureButton);
 button.buttonMode = true;
@@ -44,7 +45,7 @@ function onButtonUp() {
 	if (this.isOver && this.isdown) {
 
 		incr++;
-		window.alert(incr);
+		//window.alert(incr);
 		this.texture = textureButtonOver;
 	} else {
 		this.texture = textureButton;
