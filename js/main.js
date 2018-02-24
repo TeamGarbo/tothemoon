@@ -1,10 +1,17 @@
-var app = new PIXI.Application(window.innerWidth - 20, window.innerHeight - 20, {backgroundColor : 0x1099bb}, {
+
+var coins = 0;
+var clickAmount = 1;
+var mineAmount = 1;
+
+
+var app = new PIXI.Application(window.innerWidth - 20, window.innerHeight - 20, {
+		backgroundColor: 0x1099bb
+	}, {
 		antialias: true
 	});
 document.body.appendChild(app.view);
 
 app.stage.interactive = true;
-
 
 // create some textures from an image path
 var textureButton = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttonup.png');
@@ -32,6 +39,9 @@ button
 // add it to the stage
 app.stage.addChild(button);
 
+var countingText = new PIXI.Text('COUNT 4EVAR: 0');
+app.stage.addChild(countingText);
+
 var incr = 0;
 
 function onButtonDown() {
@@ -44,6 +54,8 @@ function onButtonUp() {
 
 	if (this.isOver && this.isdown) {
 
+		coins = coins + clickAmount;
+		countingText.text = coins + 'XDG';
 		incr++;
 		//window.alert(incr);
 		this.texture = textureButtonOver;
@@ -91,7 +103,7 @@ function onClick() {
 }
 
 app.ticker.add(function () {
-
+		
 	count += 0.1;
 
 	thing.clear();
