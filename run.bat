@@ -1,1 +1,1 @@
-start chrome main.html
+start chrome index.html
