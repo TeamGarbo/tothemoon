@@ -14,9 +14,9 @@ document.body.appendChild(app.view);
 app.stage.interactive = true;
 
 // create some textures from an image path
-var textureButton = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttonup.png');
-var textureButtonDown = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttondown.png');
-var textureButtonOver = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/buttonup.png');
+var textureButton = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/button_up.png');
+var textureButtonDown = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/button_down.png');
+var textureButtonOver = PIXI.Texture.fromImage('https://raw.githubusercontent.com/TeamGarbo/tothemoon/master/res/button_up.png');
 
 var button = new PIXI.Sprite(textureButton);
 button.buttonMode = true;
